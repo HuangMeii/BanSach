@@ -1,0 +1,24 @@
+.cuoitrang{
+    margin-top: -190px;
+}
+
+.TWC-1{
+    display: flex;
+}
+.DN{
+    font-weight: bold;
+    margin: 0 10px;
+    color: #187c7c;
+}
+
+.DK{
+    font-weight: bold;
+    color: #8429b1;
+    margin-left: 10px;
+}
+
+.TWC{
+    font-weight: bold;
+    color: #d31363;
+    margin-left: 10px;
+}
