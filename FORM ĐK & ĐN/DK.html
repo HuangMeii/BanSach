@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="styleDK.css">
+	<link rel="icon" type="image/png" href="pic/sach.jpg">
+    <script>
+        function handleRegister(event) {
+            event.preventDefault();
+            alert("Đăng ký thành công! Bạn sẽ được chuyển đến trang đăng nhập.");
+            window.location.href = "DN.html";
+        }
+
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var eyeIcon = document.getElementById("eye-icon");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.textContent = "🙈"; 
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.textContent = "👁️"; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Đăng Ký</h2>
+            <form onsubmit="handleRegister(event)">
+                <input type="text" placeholder="Tên đăng nhập *" required>
+                <input type="email" placeholder="Email *" required>
+                
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Mật khẩu *" required>
+                    <span class="eye-icon" id="eye-icon" onclick="togglePassword()">👁️</span>
+                </div>
+
+                <button type="submit">Đăng Ký</button>
+                <p>Đã có tài khoản? <a href="DN.html">Đăng Nhập</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
