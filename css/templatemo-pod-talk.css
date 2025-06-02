@@ -18,13 +18,13 @@
   --body-font-family: 'Montserrat', sans-serif;
   --title-font-family: 'Sono', sans-serif;
 
-  --h1-font-size: 58px;
+  --h1-font-size: 2.5rem;
   --h2-font-size: 46px;
   --h3-font-size: 32px;
-  --h4-font-size: 28px;
+  --h4-font-size: 1.3rem;
   --h5-font-size: 24px;
   --h6-font-size: 22px;
-  --p-font-size: 16px;
+  --p-font-size: 1.1rem;
 
   --border-radius-large: 100px;
   --border-radius-medium: 20px;
@@ -96,6 +96,12 @@ strong {
   font-weight: var(--font-weight-bold);
 }
 
+h4{
+  margin-top: 0.5rem;
+  font-size: var(--h4-font-size);
+}
+
+
 ::selection {
   background-color: var(--primary-color);
   color: var(--white-color);
@@ -142,13 +148,14 @@ strong {
   position: relative;
   overflow: hidden;
   text-align: left;
-  width: 86%;
+  width: 67%;
 }
 
 .owl-carousel-info-wrap img.poster {
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: var(--border-radius-medium);
 }
 
 .owl-carousel-info {
@@ -173,7 +180,7 @@ strong {
 .owl-carousel .owl-dots {
   background-color: var(--section-bg-color);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-medium);
   display: inline-block;
   margin: auto;
   margin-top: 40px;
@@ -182,9 +189,10 @@ strong {
 }
 
 
+
 .text-center{
-  margin-top: 138px;
-  margin-bottom: 10px !important;
+  margin-top: 11rem;
+  margin-bottom: 0 !important;
 }
 
 .owl-theme .owl-nav.disabled + .owl-dots {
