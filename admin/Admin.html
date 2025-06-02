@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Hệ thống quản lý sách</title>
+	<link rel="stylesheet" href="styleAdmin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="text-center mb-4">
+					<h3>Xin chào Admin <img src="images/logo.webp" alt=""></h3>
+                </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-bs-toggle="tab">
+                            <i class="fas fa-home"></i> Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#books" data-bs-toggle="tab">
+                            <i class="fas fa-book"></i> Quản lý sách
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orders" data-bs-toggle="tab">
+                            <i class="fas fa-shopping-cart"></i> Đơn hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#customers" data-bs-toggle="tab">
+                            <i class="fas fa-users"></i> Quản lý khách hàng
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#settings" data-bs-toggle="tab">
+                            <i class="fas fa-cog"></i> Cài đặt
+                        </a>
+                    </li>
+					<li class="nav-item">
+            			<a class="nav-link" href="https://websitebansach.com" target="_blank"><i class="fas fa-external-link-alt"></i> Đi đến web bán sách
+            			</a>
+        			</li>
+                </ul>
+            </div>
+
+            <div class="col-md-9 col-lg-10 ms-sm-auto main-content">
+                <div class="tab-content">
+                    <!-- Trang chủ -->
+                    <div class="tab-pane fade show active" id="home">
+                        <h2 class="mb-4"><i class="fas fa-home"></i> Trang chủ</h2>
+                        
+                        <div class="row">
+                            <!-- Sách bán chạy nhất -->
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-book-open"></i> Sách bán chạy nhất trong tháng 5
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Tên sách</th>
+                                                        <th>Thể loại</th>
+                                                        <th>Số lượng</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Đắc nhân tâm</td>
+                                                        <td>Tâm lý </td>
+                                                        <td>42</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Rùa và thỏ</td>
+                                                        <td>Thiếu nhi</td>
+                                                        <td>35</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Marie Curie</td>
+                                                        <td>Khoa học</td>
+                                                        <td>28</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Lược sử kinh tế học</td>
+                                                        <td>Kinh doanh</td>
+                                                        <td>25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Anh em nhà Wright</td>
+                                                        <td>Khoa học</td>
+                                                        <td>20</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Doanh thu tháng -->
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-money-bill-wave"></i> Doanh thu tháng
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h1 class="display-4 text-success">75,420,000 ₫</h1>
+                                        <p class="text-muted">Tăng 12% so với tháng trước</p>
+                                        <div class="chart-container">
+                                            <canvas id="monthlyChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Khách hàng mới -->
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-user-plus"></i> Khách hàng mới
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" class="customer-avatar me-3">
+                                                    Nguyễn Thị Mai
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill">Mới</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="customer-avatar me-3">
+                                                    Trần Văn Nam
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill">Mới</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" class="customer-avatar me-3">
+                                                    Lê Thị Hương
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill">Mới</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tỷ lệ hài lòng -->
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-smile"></i> Tỷ lệ hài lòng
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <div class="chart-container">
+                                            <canvas id="satisfactionChart"></canvas>
+                                        </div>
+                                        <h3 class="mt-3 text-success">92%</h3>
+                                        <p class="text-muted">Dựa trên 56 đánh giá</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Doanh thu theo quý -->
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar"></i> Doanh thu theo quý
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <canvas id="quarterlyChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sách bán chạy nhất -->
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <i class="fas fa-fire"></i> Sách bán chạy nhất 2024
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3 mb-3">
+                                                <div class="text-center">
+                                                    <img src="images/KinhDoanh/doanh-nghiep-cua-the-ky-21.jpg" class="img-thumbnail mb-2" style="height: 200px;">
+                                                    <h5>Doanh nghiệp thế kỷ 21</h5>
+                                                    <p class="text-muted">320 bản</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <div class="text-center">
+                                                    <img src="images/TamLy/dacnhantam.png" class="img-thumbnail mb-2" style="height: 200px;">
+                                                    <h5>Đắc nhân tâm</h5>
+                                                    <p class="text-muted">285 bản</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <div class="text-center">
+                                                    <img src="images/KinhDoanh/luoc-su-kinh-te-hoc.jpg" class="img-thumbnail mb-2" style="height: 200px;">
+                                                    <h5>Lược sử kinh tế học</h5>
+                                                    <p class="text-muted">240 bản</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <div class="text-center">
+                                                    <img src="images/KhoaHoc/marie_curie.png" class="img-thumbnail mb-2" style="height: 200px;">
+                                                    <h5>Marie Curie</h5>
+                                                    <p class="text-muted">215 bản</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quản lý sách -->
+                    <div class="tab-pane fade" id="books">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2><i class="fas fa-book"></i> Quản lý sách</h2>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">
+                                <i class="fas fa-plus"></i> Thêm sách
+                            </button>
+                        </div>
+                        
+                        <ul class="nav nav-tabs mb-3" id="bookTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="all-books-tab" data-bs-toggle="tab" data-bs-target="#all-books" type="button">Tất cả sách</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="science-books-tab" data-bs-toggle="tab" data-bs-target="#science-books" type="button">Khoa học</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="business-books-tab" data-bs-toggle="tab" data-bs-target="#business-books" type="button">Kinh doanh</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="psychology-books-tab" data-bs-toggle="tab" data-bs-target="#psychology-books" type="button">Tâm lý</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="literature-books-tab" data-bs-toggle="tab" data-bs-target="#literature-books" type="button">Văn học</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="children-books-tab" data-bs-toggle="tab" data-bs-target="#children-books" type="button">Thiếu nhi</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="skill-books-tab" data-bs-toggle="tab" data-bs-target="#skill-books" type="button">Kĩ năng</button>
+                            </li>
+                        </ul>
+                        
+                        <div class="tab-content" id="bookTabsContent">
+                            <!-- Tất cả sách -->
+                            <div class="tab-pane fade show active" id="all-books" role="tabpanel">
+                                <div class="table-responsive">
+                                    <table class="table table-hover" id="booksTable">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Bìa sách</th>
+                                                <th>Tên sách</th>
+                                                <th>Tác giả</th>
+                                                <th>Thể loại</th>
+                                                <th>Giá</th>
+                                                <th>Tồn kho</th>
+                                                <th>Hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><img src="images/KinhDoanh/doanh-nghiep-cua-the-ky-21.jpg" class="book-cover"></td>
+                                                <td>Doanh nghiệp của thế kỷ 21</td>
+                                                <td>Robert T. Kiyosaki</td>
+                                                <td>Kinh doanh</td>
+                                                <td>120,000 ₫</td>
+                                                <td>95</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td><img src="images/TamLy/dacnhantam.png" class="book-cover"></td>
+                                                <td>Đắc nhân tâm</td>
+                                                <td>Dale Carnegie</td>
+                                                <td>Tâm lý</td>
+                                                <td>220,000 ₫</td>
+                                                <td>82</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td><img src="images/KhoaHoc/marie_curie.png" class="book-cover"></td>
+                                                <td>Marie Curie</td>
+                                                <td>Maria Skłodowska-Curie </td>
+                                                <td>Khoa học</td>
+                                                <td>295,000 ₫</td>
+                                                <td>78</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td><img src="images/KhoaHoc/luoc_su_khoa_hoc.png" class="book-cover"></td>
+                                                <td>Lược sử kinh tế học</td>
+                                                <td>Niall Kishtainy</td>
+                                                <td>Kinh doanh</td>
+                                                <td>130,000 ₫</td>
+                                                <td>66</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td><img src="images/KhoaHoc/anh_em_nha_wright.png" class="book-cover"></td>
+                                                <td>Anh em nhà Wright</td>
+                                                <td>Nguyễn Anh Đạt</td>
+                                                <td>Khoa học</td>
+                                                <td>185,000 ₫</td>
+                                                <td>52</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td><img src="images/KinhDoanh/the-gioi-phang.jpg" class="book-cover"></td>
+                                                <td>Thế giới phẳng</td>
+                                                <td>Thomas Friedman</td>
+                                                <td>Kinh doanh</td>
+                                                <td>120,000 ₫</td>
+                                                <td>48</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>7</td>
+                                                <td><img src="images/TamLy/tutotdenvidai.jpg" class="book-cover"></td>
+                                                <td>Từ tốt đến vĩ đại</td>
+                                                <td>Jim Collins</td>
+                                                <td>Tâm lý</td>
+                                                <td>210,000 ₫</td>
+                                                <td>47</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>8</td>
+                                                <td><img src="images/ThieuNhi/con-co-mo-coi.jpg" class="book-cover"></td>
+                                                <td>Con cò mồ côi</td>
+                                                <td>Nguyễn Thị Thanh Huệ</td>
+                                                <td>Thiếu nhi</td>
+                                                <td>85,000 ₫</td>
+                                                <td>42</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>9</td>
+                                                <td><img src="images/VanHoc/demenphieuluuki.jpg" class="book-cover"></td>
+                                                <td>Dế mèn phiêu lưu kí</td>
+                                                <td>Tô Hoài</td>
+                                                <td>Văn học</td>
+                                                <td>130,000 ₫</td>
+                                                <td>38</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>10</td>
+                                                <td><img src="images/VanHoc/Tat_den.jpg" class="book-cover"></td>
+                                                <td>Tắt đèn</td>
+                                                <td>Ngô Tất Tố</td>
+                                                <td>Văn học</td>
+                                                <td>110,000 ₫</td>
+                                                <td>36</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>11</td>
+                                                <td><img src="images/KyNang/7-thoi-quen-ban-tre-thanh-dat.png" class="book-cover"></td>
+                                                <td>Dám nghĩ lớn</td>
+                                                <td>David Joseph Schwartz</td>
+                                                <td>Kĩ năng</td>
+                                                <td>130,000 ₫</td>
+                                                <td>35</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>12</td>
+                                                <td><img src="images/KyNang/7-thoi-quen-ban-tre-thanh-dat.png" class="book-cover"></td>
+                                                <td>7 thói quen bạn trẻ thành đạt</td>
+                                                <td>Stephen R.Covey</td>
+                                                <td>Kĩ năng</td>
+                                                <td>295,000 ₫</td>
+                                                <td>28</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>13</td>
+                                                <td><img src="images/ThieuNhi/Rua-va-tho.jpg" class="book-cover"></td>
+                                                <td>Rùa và thỏ</td>
+                                                <td>Athur Rackham</td>
+                                                <td>Thiếu nhi</td>
+                                                <td>130,000 ₫</td>
+                                                <td>20</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>14</td>
+                                                <td><img src="images/ThieuNhi/Nhung-tam-long-cao-ca.jpg" class="book-cover"></td>
+                                                <td>Những tấm lòng cao cả</td>
+                                                <td>Edmondo De Amicis</td>
+                                                <td>Thiếu nhi</td>
+                                                <td>165,000 ₫</td>
+                                                <td>10</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+											<tr>
+                                                <td>15</td>
+                                                <td><img src="images/TamLy/nha-gia-kim.jpg" class="book-cover"></td>
+                                                <td>Nhà giả kim</td>
+                                                <td>Paulo Coelho</td>
+                                                <td>Khoa học</td>
+                                                <td>190,000 ₫</td>
+                                                <td>8</td>
+                                                <td>
+                                                    <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Sách khoa học -->
+                            <div class="tab-pane fade" id="science-books" role="tabpanel">
+                                <div class="row" id="scienceBooksRow">
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KhoaHoc/marie_curie.png" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Marie Curie</h5>
+                                                <p class="card-text">Marie Skłodowska-Curie </p>
+                                                <p class="text-success">295,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KhoaHoc/anh_em_nha_wright.png" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Anh em nhà Wright</h5>
+                                                <p class="card-text">David Mccullough</p>
+                                                <p class="text-success">185,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KhoaHoc/luoc_su_khoa_hoc.png" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Lược sử khoa học</h5>
+                                                <p class="card-text">Walter Isaacson</p>
+                                                <p class="text-success">130,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sách kinh doanh -->
+                            <div class="tab-pane fade" id="business-books" role="tabpanel">
+                                <div class="row" id="businessBooksRow">
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KinhDoanh/doanh-nghiep-cua-the-ky-21.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Doanh nghiệp của thế kỷ 21</h5>
+                                                <p class="card-text">Robert T. Kiyosaki</p>
+                                                <p class="text-success">120,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KinhDoanh/the-gioi-phang.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Thế giới phẳng</h5>
+                                                <p class="card-text">Thomas Friedman</p>
+                                                <p class="text-success">120,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KinhDoanh/luoc-su-kinh-te-hoc.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Lược sử kinh tế học</h5>
+                                                <p class="card-text">Niall Kishtainy</p>
+                                                <p class="text-success">110,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KinhDoanh/loi-thu-toi-moi-cua-mot-sat-thu-kinh-te.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Lời thú tội của một sát thủ kinh tế</h5>
+                                                <p class="card-text">John Perkins</p>
+                                                <p class="text-success">140,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <!-- Sách tâm lý -->
+                            <div class="tab-pane fade" id="psychology-books" role="tabpanel">
+                                <div class="row" id="psychologyBooksRow">
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/TamLy/dacnhantam.png" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Đắc nhân tâm</h5>
+                                                <p class="card-text"> Dale Breckenridge Carnegie</p>
+                                                <p class="text-success">220,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+									
+									<div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/TamLy/nha-gia-kim.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nhà giả kim</h5>
+                                                <p class="card-text">Paulo Coelho</p>
+                                                <p class="text-success">190,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+											</div>
+										</div>
+									</div>
+										
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/TamLy/tutotdenvidai.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Jim Collins</h5>
+                                                <p class="card-text">Niall Kishtainy</p>
+                                                <p class="text-success">210,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/TamLy/thaotungtamli.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Thao túng tâm lý</h5>
+                                                <p class="card-text">Shannon Thomas</p>
+                                                <p class="text-success">240,000 ₫</p>
+                                            </div>
+												<div class="card-footer bg-white">
+													<button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sách văn học -->
+                            <div class="tab-pane fade" id="literature-books" role="tabpanel">
+                                <div class="row" id="literatureBooksRow">
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/VanHoc/Chi_pheo.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Chí phèo</h5>
+                                                <p class="card-text">Nam Cao</p>
+                                                <p class="text-success">90,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+									
+									<div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/VanHoc/demenphieuluuki.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dế mèn phiêu lưu kí</h5>
+                                                <p class="card-text">Tô Hoài</p>
+                                                <p class="text-success">130,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+											</div>
+										</div>
+									</div>
+										
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/VanHoc/Tat_den.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Tắt đèn</h5>
+                                                <p class="card-text">Ngô Tất Tố</p>
+                                                <p class="text-success">110,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/VanHoc/Van_hoc_VN.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Văn học việt nam</h5>
+                                                <p class="card-text">Huy Cận</p>
+                                                <p class="text-success">140,000 ₫</p>
+                                            </div>
+												<div class="card-footer bg-white">
+													<button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sách thiếu nhi -->
+                            <div class="tab-pane fade" id="children-books" role="tabpanel">
+                                <div class="row" id="childrenBooksRow">
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/ThieuNhi/con-co-mo-coi.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Con cò mồ côi</h5>
+                                                <p class="card-text">Nguyễn Thị Thanh Huệ </p>
+                                                <p class="text-success">85,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/ThieuNhi/Nhung-tam-long-cao-ca.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Những tấm lòng cao cả</h5>
+                                                <p class="card-text">Edmondo De Amicis</p>
+                                                <p class="text-success">165,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/ThieuNhi/Rua-va-tho.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Rùa và thỏ</h5>
+                                                <p class="card-text">Arthur Rackham</p>
+                                                <p class="text-success">130,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sách kĩ năng -->
+                            <div class="tab-pane fade" id="skill-books" role="tabpanel">
+                                <div class="row" id="skillBooksRow">
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KyNang/7-thoi-quen-ban-tre-thanh-dat.png" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">7 thói quen  bạn trẻ thành đạt</h5>
+                                                <p class="card-text">Stephen R. Covey  </p>
+                                                <p class="text-success">295,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KyNang/Doc-vi-bat-ki-ai.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Đọc vị bất kì ai</h5>
+                                                <p class="card-text">David J. Lieberman</p>
+                                                <p class="text-success">55,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <img src="images/KyNang/dam-nghi-lon.jpg" class="card-img-top">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Dám nghĩ lớn</h5>
+                                                <p class="card-text">David Joseph Schwartz</p>
+                                                <p class="text-success">130,000 ₫</p>
+                                            </div>
+                                            <div class="card-footer bg-white">
+                                                <button class="btn btn-sm btn-danger w-100"><i class="fas fa-trash"></i> Xóa</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Đơn hàng -->
+                    <div class="tab-pane fade" id="orders">
+                        <h2 class="mb-4"><i class="fas fa-shopping-cart"></i> Quản lý đơn hàng</h2>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> Tính năng đang được phát triển
+                        </div>
+                    </div>
+                    
+                    <!-- Quản lý khách hàng -->
+                    <div class="tab-pane fade" id="customers">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2><i class="fas fa-users"></i> Quản lý khách hàng</h2>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+                                <i class="fas fa-plus"></i> Thêm khách hàng
+                            </button>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover" id="customersTable">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Ảnh</th>
+                                        <th>Tên khách hàng</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Số giao dịch</th>
+                                        <th>Tổng chi tiêu</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td><img src="https://randomuser.me/api/portraits/men/32.jpg" class="customer-avatar"></td>
+                                        <td>Nguyễn Văn A</td>
+                                        <td>0987xxx123</td>
+                                        <td><span class="badge badge-transaction">5</span></td>
+                                        <td>1,250,000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td><img src="https://randomuser.me/api/portraits/women/44.jpg" class="customer-avatar"></td>
+                                        <td>Trần Thị B</td>
+                                        <td>0912xxx456</td>
+                                        <td><span class="badge badge-transaction">3</span></td>
+                                        <td>750,000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td><img src="https://randomuser.me/api/portraits/men/22.jpg" class="customer-avatar"></td>
+                                        <td>Lê Văn C</td>
+                                        <td>0903xxx789</td>
+                                        <td><span class="badge badge-transaction">7</span></td>
+                                        <td>1,850,000 ₫</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+									<tr>
+										<td>4</td>
+										<td><img src="https://randomuser.me/api/portraits/women/65.jpg" class="customer-avatar"></td>
+										<td>Phạm Thị Dung</td>
+										<td>0978xxx321</td>
+										<td><span class="badge badge-transaction">2</span></td>
+										<td>560,000 ₫</td>
+										<td>
+											<button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td><img src="https://randomuser.me/api/portraits/men/48.jpg" class="customer-avatar"></td>
+										<td>Hoàng Văn E</td>
+										<td>0965xxx654</td>
+										<td><span class="badge badge-transaction">4</span></td>
+										<td>980,000 ₫</td>
+										<td>
+											<button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<tr>
+										<td>6</td>
+										<td><img src="https://randomuser.me/api/portraits/women/29.jpg" class="customer-avatar"></td>
+										<td>Vũ Thị F</td>
+										<td>0913xxx987</td>
+										<td><span class="badge badge-transaction">1</span></td>
+										<td>250,000 ₫</td>
+										<td>
+											<button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<tr>
+										<td>7</td>
+										<td><img src="https://randomuser.me/api/portraits/men/76.jpg" class="customer-avatar"></td>
+										<td>Đặng Văn G</td>
+										<td>0986xxx456</td>
+										<td><span class="badge badge-transaction">6</span></td>
+										<td>1,420,000 ₫</td>
+										<td>
+											<button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<tr>
+										<td>8</td>
+										<td><img src="https://randomuser.me/api/portraits/women/51.jpg" class="customer-avatar"></td>
+										<td>Ngô Thị H</td>
+										<td>0904xxx789</td>
+										<td><span class="badge badge-transaction">3</span></td>
+										<td>720,000 ₫</td>
+										<td>
+											<button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Cài đặt -->
+                    <div class="tab-pane fade" id="settings">
+                        <h2 class="mb-4"><i class="fas fa-cog"></i> Cài đặt hệ thống</h2>
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> Tính năng đang được phát triển
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal thêm sách -->
+    <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBookModalLabel">Thêm sách mới</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addBookForm">
+                        <div class="mb-3">
+                            <label for="bookTitle" class="form-label">Tên sách</label>
+                            <input type="text" class="form-control" id="bookTitle" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookAuthor" class="form-label">Tác giả</label>
+                            <input type="text" class="form-control" id="bookAuthor" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookCategory" class="form-label">Thể loại</label>
+                            <select class="form-select" id="bookCategory" required>
+                                <option value="">Chọn thể loại</option>
+                                <option value="Khoa học">Khoa học</option>
+                                <option value="Kinh doanh">Kinh doanh</option>
+                                <option value="Tâm lý">Tâm lý</option>
+                                <option value="Văn học">Văn học</option>
+                                <option value="Thiếu nhi">Thiếu nhi</option>
+                                <option value="Kĩ năng">Kĩ năng</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookPrice" class="form-label">Giá bán</label>
+                            <input type="number" class="form-control" id="bookPrice" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookQuantity" class="form-label">Số lượng</label>
+                            <input type="number" class="form-control" id="bookQuantity" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookCover" class="form-label">Ảnh bìa</label>
+                            <input type="file" class="form-control" id="bookCover" accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveBookBtn">Lưu sách</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal thêm khách hàng -->
+    <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCustomerModalLabel">Thêm khách hàng mới</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addCustomerForm">
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label">Họ tên</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerPhone" class="form-label">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="customerPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="customerEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerAddress" class="form-label">Địa chỉ</label>
+                            <textarea class="form-control" id="customerAddress" rows="2"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="customerAvatar" class="form-label">Ảnh đại diện</label>
+                            <input type="file" class="form-control" id="customerAvatar" accept="image/*">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="saveCustomerBtn">Lưu khách hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	    <!-- Bootstrap JS và Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Admin.js"></script>
+</body>
+</html>
+           

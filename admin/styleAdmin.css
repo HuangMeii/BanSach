@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.sidebar {
+    background-color: var(--dark-color);
+    color: white;
+    height: 100vh;
+    position: fixed;
+    padding-top: 20px;
+}
+
+.sidebar .nav-link {
+    color: var(--light-color);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0 !important;
+    font-weight: bold;
+}
+
+.chart-container {
+    height: 300px;
+    position: relative;
+}
+
+.book-cover {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.tab-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.customer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.badge-transaction {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+.card-img-top {
+        height: 350px; 
+        object-fit: cover;  
+        width: 100%;
+}
+
+
