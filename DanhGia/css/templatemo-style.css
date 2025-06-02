@@ -1,17 +1,8 @@
-/*
-
-Letter Template 
-
-https://templatemo.com/tm-510-letter
-
-*/
-
 body {
 	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	font-size: 24px;
 	font-weight: 300;
 	overflow: auto;
-	
 }
 
 a, button {
@@ -65,6 +56,32 @@ p {
     z-index: 1001;
 }
 
+/* Thanh danh mục */
+/* ------------- */
+.text-center img{
+    width: 45%;
+    height: 45%;
+    object-fit: cover;
+    border-radius: 15%;   
+    cursor: pointer; 
+}
+
+.text-center img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.text-center p{
+    font-size: 1rem;
+}
+
+.text-center{
+    top: 0.7rem;
+    width: 45rem;
+}
+
+/* Định dạng form  */
+/* -------------- */
 .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: white;
 }
@@ -78,20 +95,17 @@ p {
   color: white;
 }
 
-.form-control {
-  color: white !important;
-}
-
 .form-control:focus {
-    background-color: transparent;
+    color: #FFFFFF  ;
+    background-color: transparent ;
 }
 
 .form-control::placeholder {
     color: white;
 }
 
-.form-control {  
-    color: #FFFFFF;
+.form-control { 
+    color: #FFFFFF; 
     border-radius: .5rem;
     background-color: transparent;
     border: 1px solid #FFFFFF;
@@ -109,9 +123,11 @@ p {
     
 }
 
-.contact_email {
-	color: #FFFFFF;
+.contact_username {
+	color: transparent !important;
 }
+
+/* Nút gửi */
 .tm-btn-subscribe {
 	background-color: #006699;
 	border-radius: .5rem;
@@ -123,13 +139,14 @@ p {
 }
 
 .tm-btn-subscribe:hover {
-    background-color: #055278;
+    background-color: #16115a;
 }
 
 .tm-social-icons-container {
     margin: 0;
 }
 
+/* icon liên kết khác */
 .tm-social-link {
     border-color: #FFFFFF;
     color: black;
@@ -139,6 +156,10 @@ p {
     text-align: center;
 }
 
+.tm-social-link:hover {
+    scale: 1.2;
+    box-shadow: 2px 4px 6px rgba(232, 224, 224, 0.3);
+}
 .fa {
     color: #FFFFFF;
 }
@@ -173,7 +194,6 @@ p {
     -o-animation: imageAnimation 72s linear infinite 0s;
     -ms-animation: imageAnimation 72s linear infinite 0s;
     animation: imageAnimation 72s linear infinite 0s;
-
 }
 
 
@@ -231,8 +251,9 @@ p {
 	100% { opacity: 0 }
 }
 
-
-@media screen and (max-width: 1000px), screen and (orientation: portrait) {
+/* reponsive  */
+/* --------- */
+@media screen and (max-width: 1200px) {
   .container-fluid {
     flex-direction: column;
   }
@@ -245,10 +266,14 @@ p {
     width: 100%;
   }
   
+    #left-content {
+        padding: 2rem;
+        margin-top: 3rem !important;
+    }
   #content-section {
-    width: 100%;
-    margin-left: 0;
-    padding: 1rem;
+    padding: 1.8rem;
+    width: auto;
+    margin: 0 auto !important;
   }
   #Umaru {
     width: 9.5rem !important;
@@ -260,3 +285,57 @@ p {
     width: 14rem;
   }
 }
+
+@media screen and (orientation: portrait) {
+    .container-fluid {
+        flex-direction: column;
+    }
+    body{
+        overflow: auto;
+    }
+
+  #left-content,
+  #right-content {
+    width: 100%;
+  }
+  
+    #left-content {
+        padding: 2rem;
+        margin-top: 4rem !important;
+    }
+  #content-section {
+    padding: 2rem;
+    width: auto;
+    margin: 0 auto;
+  }
+  #Umaru {
+    width: 9.5rem !important;
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .text-center {
+    width: 14rem;
+  }
+}
+
+
+@media screen and (max-width: 700px){
+    #content-section {
+        margin-top: 9rem !important;
+  }
+
+  #right-content h1{
+    font-size: 2rem;
+  }
+
+    #right-content p{
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 1000px), screen and (orientation: portrait) {
+  img{
+	width: 3rem !important;
+  }
+}
+

@@ -48,6 +48,7 @@ body {
   color: var(--white-color);
 }
 
+
 /*---------------------------------------
   TYPOGRAPHY               
 -----------------------------------------*/
@@ -62,7 +63,7 @@ h6 {
   color: var(--white-color); /* White for visibility on dark background */
 }
 
-h1 { font-size: var(--h1-font-size); font-weight: var(--font-weight-bold); }
+h1 { font-size: var(--h1-font-size); font-weight: var(--font-weight-bold); word-spacing: -0.5rem;}
 h2 { font-size: var(--h2-font-size); font-weight: var(--font-weight-bold); }
 h3 { font-size: var(--h3-font-size); }
 h4 { font-size: var(--h4-font-size); }
@@ -156,6 +157,7 @@ h4{
   height: auto;
   object-fit: cover;
   border-radius: var(--border-radius-medium);
+  cursor: pointer;
 }
 
 .owl-carousel-info {
@@ -198,6 +200,11 @@ h4{
 .owl-theme .owl-nav.disabled + .owl-dots {
   margin-top: 40px;
 }
+
+#empty-space .owl-item {
+    margin-left: 80px !important;
+}
+
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
@@ -330,6 +337,8 @@ h4{
   .hero-section {
     background-size: 180% 65%;
   }
+  h1 { font-size: 2rem; padding: 0 2rem;}
+
 }
 
 @media screen and (max-width: 480px) {

@@ -202,8 +202,8 @@ document
     .addEventListener('submit', function (event) {
         event.preventDefault();
 
-        let message = document.getElementById('contact_message').value.trim();
         let username = document.getElementById('contact_username').value.trim();
+        let message = document.getElementById('contact_message').value.trim();
         if (message === '') {
             alert('Vui lòng nhập nội dung trước khi gửi!');
             return;

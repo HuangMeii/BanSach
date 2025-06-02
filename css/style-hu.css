@@ -72,3 +72,163 @@
   padding: 3px 10px;
   margin-right: 5px;
 }
+
+/* Phần trống đầu trang */
+    #empty-space {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .floating {
+      position: fixed;
+      width: 7rem;
+      height: 10rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 60px;
+      text-align: center;
+      border: 2px solid white;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 0, 128, 0.8);
+      animation-timing-function: linear;
+      opacity: 1;
+      pointer-events: none;
+      z-index: 100;
+      transition: opacity 0.5s ease;
+      overflow: hidden;
+    }
+
+    .floating.visible {
+      opacity: 1;
+    }
+
+    .titles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 10vw;
+      font-weight: 900;
+      font-style: italic;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
+    }
+
+    .visible {
+      opacity: 1;
+    }
+
+
+    #final-section {
+      position: relative;
+      height: 100vh;
+      background: #111;
+      color: white;
+      text-align: center;
+      padding-top: 20vh;
+      font-size: 2rem;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 5;
+    }
+
+    #final-section.visible {
+      opacity: 1;
+    }
+
+    /* Custom Carousel Styles */
+    .owl-carousel .owl-stage {
+      display: flex;
+      align-items: center;
+      padding: 0px 0;
+      margin: 20px 0;
+    }
+
+    .owl-carousel .owl-item {
+      transition: all 0.5s ease;
+      opacity: 0.6;
+      transform: scale(0.75);
+      z-index: 1;
+    }
+
+    .owl-item clone {
+      margin: 0;
+    }
+    .owl-carousel .owl-item.center {
+      opacity: 1;
+      transform: scale(1.12);
+       transition: transform 0.3s ease;
+      z-index: 2;
+    }
+
+    .owl-carousel .owl-item.center .owl-carousel-info-wrap {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(74, 72, 72, 0.781);
+      border-radius: 15px;
+      padding: 15px;
+    }
+
+    .owl-carousel .owl-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
+
+    .owl-carousel .owl-nav button {
+      pointer-events: auto;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+      font-size: 24px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 20px;
+      transition: all 0.3s ease;
+    }
+
+    .owl-carousel .owl-nav button:hover {
+      background: rgba(255, 255, 255, 0.4) !important;
+      transform: scale(2.4);
+    }
+
+    .owl-carousel .owl-dots {
+      margin-top: 20px;
+    }
+
+    .owl-carousel .owl-dots button.owl-dot span {
+      background: rgba(255, 255, 255, 0.5) !important;
+      transition: all 0.3s ease;
+    }
+
+    .owl-carousel .owl-dots button.owl-dot.active span {
+      background: white !important;
+      transform: scale(1.3);
+    }

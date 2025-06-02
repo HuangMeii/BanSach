@@ -1,3 +1,5 @@
+/* Hiệu ứng xuất hiện và biến mất  */
+/* ------------------------------ */
 .fade-out {
     opacity: 0;
     transform: translateY(10px); /* Dịch xuống nhẹ để tạo hiệu ứng */
@@ -10,9 +12,19 @@
     pointer-events: auto;
 }
 
+#content-section.fade-out {
+    opacity: 0;
+}
+
+#content-section.fade-in {
+    opacity: 1;
+}
+
+/* Trái phải */
+/* ----------------- */
 #content-section {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
     float: left;
     min-height: 30vh;
     padding: 2rem;
@@ -29,6 +41,11 @@
 #left-content{
     margin-top: 12rem !important;
     z-index: 1001;
+    flex: 1;
+}
+
+#right-content {
+    flex: 2;
 }
 
 .tm-content {
@@ -38,14 +55,6 @@
 	padding: 0 4rem;
     max-width: 60rem;
     left: 2rem;
-}
-
-#content-section.fade-out {
-    opacity: 0;
-}
-
-#content-section.fade-in {
-    opacity: 1;
 }
 
 #content-section h1 {
@@ -75,10 +84,6 @@
     margin-bottom: 15px;
 }
 
-#content-section p {
-    margin: 2;
-}
-
 #content-section strong {
     color: #00ffff;
 }
@@ -89,3 +94,4 @@
     border: none;
     cursor: pointer;
 }
+
