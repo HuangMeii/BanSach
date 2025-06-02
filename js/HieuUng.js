@@ -207,3 +207,4 @@ $(document).ready(function(){
     });
     floatingElements.length = 0;
   }
+

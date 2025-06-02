@@ -20,8 +20,10 @@
     <link href="css/templatemo-pod-talk.css" rel="stylesheet">
     <link href="DanhGia/css/style-header.css" rel="stylesheet">
     <link href="css/style-hu.css" rel="stylesheet">
-  </head>
   <body>
+
+    <!-- Cục gạch AI -->
+    <button id="chatbotIcon">🤖</button>    
     <!-- Header -->
     <div id="header-animation">
       <div class="header-container">
@@ -181,5 +183,23 @@
     <script src="js/HieuUng.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="DanhGia/js/header.js"></script>
+      
+    <!-- Nhúng chatbot dạng Popup -->
+    <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+    <script type="module">
+      let landbot;
+      document.getElementById('chatbotIcon').addEventListener('click', () => {
+        if (!landbot) {
+          landbot = new Landbot.Popup({
+            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2974136-SGSFZSDF2RWNCCMF/index.json',
+            openInNewTab: false
+          });
+        }
+        landbot.open();
+        setTimeout(() => {
+          const popup = document.querySelector('.landbot-popup');
+        }, 500);
+      });
+    </script>
   </body>
 </html>
