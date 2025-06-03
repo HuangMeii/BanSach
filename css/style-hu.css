@@ -249,8 +249,6 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 10010;
 }
-.landbot-popup {
-  width: 400px !important;
-  height: 600px !important;
-  border-radius: 20px !important;
+#chatbotIcon:hover {
+  background: #cfe0f2;
 }

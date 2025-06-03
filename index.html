@@ -20,6 +20,18 @@
     <link href="css/templatemo-pod-talk.css" rel="stylesheet">
     <link href="DanhGia/css/style-header.css" rel="stylesheet">
     <link href="css/style-hu.css" rel="stylesheet">
+
+    <style>
+      .landbot-popup {
+  width: 300px !important;
+  height: 400px !important;
+  max-width: 300px !important;
+  max-height: 400px !important;
+  min-width: 300px !important;
+  min-height: 400px !important;
+}
+    </style>
+  </head>
   <body>
 
     <!-- Cục gạch AI -->
@@ -185,7 +197,7 @@
     <script src="DanhGia/js/header.js"></script>
       
     <!-- Nhúng chatbot dạng Popup -->
-    <script src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
+    <script type="module" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs"></script>
     <script type="module">
       let landbot;
       document.getElementById('chatbotIcon').addEventListener('click', () => {
@@ -202,4 +214,5 @@
       });
     </script>
   </body>
-</html>
+</html> 
+vẫn không đúng kích thước
