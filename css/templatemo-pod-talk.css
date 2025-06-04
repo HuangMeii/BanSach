@@ -9,8 +9,8 @@
   --extra-color: #00ff99; /* From HTML */
   --bg-dark: #0d0d1a; /* From HTML */
   --section-bg-color: rgba(255, 255, 255, 0.1); /* Adjusted for dark theme */
-  --custom-btn-bg-color: #7e30e1; /* Uses secondary-color */
-  --custom-btn-bg-hover-color: #ff3e78; /* Uses primary-color */
+  --custom-btn-bg-color: #e0904a; /* Uses secondary-color */
+  --custom-btn-bg-hover-color: #eb591b; /* Uses primary-color */
   --p-color: #b0b0b5; /* Lighter text for dark background */
   --border-color: #36caff; /* Uses accent-color */
   --link-hover-color: #36caff; /* Uses accent-color */
@@ -42,7 +42,7 @@
 -----------------------------------------*/
 body {
   margin: 0;
-  background: radial-gradient(circle at center, #4a0f0f, #1a0000);
+  background: radial-gradient(circle at center, #f1c7c7, #424141);
   font-family: var(--body-font-family);
   overflow-x: hidden;
   color: var(--white-color);
@@ -132,11 +132,11 @@ h4{
   CAROUSEL        
 -----------------------------------------*/
 .hero-section {
-  background: radial-gradient(circle at center, #4a0f0f, #1a0000); /* Match body */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
   padding-top: 100px;
+  background: radial-gradient(circle at center, #2E2E2E, #A29B9B); /* Match body */
 }
 
 .owl-carousel {

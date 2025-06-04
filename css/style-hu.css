@@ -1,12 +1,11 @@
 .title-1, .title-2, .title-3, .title-4 {
- filter: drop-shadow(0 0 15px rgba(255, 62, 120, 0.5));
+ filter: drop-shadow(0 0 15px rgba(232, 101, 58, 0.5));
  width: 15rem;
  height: 15rem;
 }
 .Hu1 {
   border-radius: 5%;
   position: relative;
-  /* overflow: hidden; */
   text-align: left;
   width: 100%;
   display: flex;
@@ -34,7 +33,7 @@
 .title-2 .Hu3{
      width: 6.5rem;
      margin: 0.1rem 0.2rem;
-     background-color: rgba(166, 16, 116, 0.8);
+     background-color: rgba(225, 113, 15, 0.8);
 }
 
 .title-3 .Hu3{
@@ -143,7 +142,7 @@
     #final-section {
       position: relative;
       height: 100vh;
-      background: #111;
+      background: #777070;
       color: white;
       text-align: center;
       padding-top: 20vh;
